@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/generalStyles.css">
+    <title>GYM 1</title>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">🏋️ Gym Power</div>
+        <div class="hamburger" id="hamburger">☰</div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Locations</a></li>
+            <li><a href="">Programs</a></li>
+            <li><a href="#section-memberships" class="nav-btn">Membership</a></li>
+            <li><a href="">Contacto</a></li>
+        </ul>
+    </nav>    <!-- END SECTION NAVBAR -->
+
+    <!-- HERO -->
+    <section class="section-hero">
+      <div class="hero-content">
+        <h1>¡Bienvenido a Gym Power!</h1>
+        <p>Tu destino para alcanzar tus metas de fitness.</p>
+        <a href="https://play.google.com/store/games?hl=en&pli=1" target="_blank"  class="btn-get-app"> GET APP </a>
+      </div>
+    </section>     <!-- END SECTION HERO -->
+
+
+    <!-- PROGRAMS -->  
+    <section class="section-programs">  
+    
+      <div class="container-bucle-programs">
+        <div class="bucle-programs">
+            <h2 class="title-bucle-programs">NUESTROS PROGRAMAS NUESTROS PROGRAMAS NUESTROS PROGRAMAS NUESTROS PROGRAMAS NUESTROS PROGRAMAS</h2>
+            <h2 class="title-bucle-programs">NUESTROS PROGRAMAS NUESTROS PROGRAMAS NUESTROS PROGRAMAS NUESTROS PROGRAMAS NUESTROS PROGRAMAS</h2>
+        </div>
+      </div>
+
+      <div class="container-programs">
+      
+        <section class="program-card program-box">
+          <h3>BOXING</h3>
+          <a class="program-btn" href="#">VER MÁS</a>
+        </section>
+
+        <section class="program-card program-cross">
+          <h3>CROSSFIT</h3>
+          <a class="program-btn" href="#">VER MÁS</a>
+        </section>
+
+        <section class="program-card program-training">
+          <h3>TRAINING</h3>
+          <a class="program-btn" href="#">VER MÁS</a>
+        </section>
+
+        <section class="program-card program-pilates">
+          <h3>PILATES</h3>
+          <a class="program-btn" href="#">VER MÁS</a>       
+        </section>
+      </div>
+    </section>   <!-- END SECTION PROGRAMS -->
+
+      <!-- SECTION MEMBERSHIP -->
+      <section id="section-memberships" class="section-memberships">
+        <h2>MEMBERSHIPS</h2>
+        <section class="container-plans"> <!-- CONTAINER PLANS -->
+
+          <div class="plan-card">
+            <h3>BASIC</h3>
+            <p class="plan-price">$40<span>/month</span></p>
+            <ul>
+              <li>Access to gym floor</li>
+              <li>1 personal training session</li>
+              <li>Locker room access</li>
+              <li>Access one branch</li>
+            </ul>
+            <a href="#" class="plan-btn">Join Now</a>	
+          </div>
+         
+          <div class="plan-card recommended">
+            <h3>PRO</h3>
+            <p class="plan-price">$75<span>/month</span></p>
+            <ul>
+             <li>Gym + All classes</li>
+             <li>5 personal training sessions</li>
+             <li>Free merchandise</li>
+             <li>Access all branches</li>
+            </ul>
+            <a href="#" class="plan-btn">Join Now</a>	
+          </div>
+           
+          <div class="plan-card">
+            <h3>PREMIUM</h3>
+            <p class="plan-price">$100<span>/month</span></p>
+              <ul>
+                <li>All access 24/7</li>
+                <li>Unlimited training sessions</li>
+                <li>Diet planning + more</li>
+                <li>Access all branches</li>
+              </ul>
+              <a href="#" class="plan-btn">Join Now</a>	
+          </div>
+
+        </section> <!-- END CONTAINER PLANS -->
+      </section>   <!-- END SECTION MEMBERSHIP -->
+
+    
+<!-- SECTION CONTACT -->
+
+<!-- <label for="">: The for attribute is bound to the corresponding input ID.
+id="name" → to bind to the <label>.
+name="name" → what is sent to the backend.
+required → makes the field required.    -->
+<section class="section-contact">
+  <h2 class="contact-title">CONTACT</h2>
+  <form action="" method="post" class="contact-form">
+    
+    <div class="form-row-group">  
+      <div class="form-row-items"> 
+          <label for="name">Name:</label>
+          <input type="text" id="name" autocomplete="given-name" name="name" required>
+      </div>
+      <div class="form-row-items">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required>
+      </div>
+    </div> 
+     
+    <div class="form-row-group">  
+      <div class="form-row-items"> 
+        <label for="mail">Mail:</label>
+        <input type="email" id="mail" name="mail" required>
+      </div>
+      <div class="form-row-items"> 
+        <label for="program">Program:</label>
+        <select class="form-select" id="program" name="program" required>
+          <option value="">-- Select a program --</option>
+          <option value="program-box">Boxing</option>
+          <option value="program-crossfit">Crossfit</option>
+          <option value="program-training">Training</option>
+          <option value="program-pilates">Pilates</option>
+          <option value="program-general">General</option>
+        </select>
+      </div>
+     </div>
+
+    <label for="asunto">Asunto:</label>
+    <input type="text" id="asunto" name="asunto">
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+    <a class="btn-form-submit">Enviar</a>
+  </form>
+</section><!-- END SECTION CONTACT -->
+
+<!-- FOOTER -->
+<footer class="footer"> <!-- This is an ARIA (Accessible Rich Internet Applications) attribute. -->
+  <div class="footer-container">
+    <section class="footer-column">
+      <h3>🏋️ Gym Power</h3>
+      <p>Transformando cuerpos y vidas desde 2024. </p>
+      <p>&copy; 2025 Gym Power. Todos los derechos reservados.</p>
+    </section>
+
+    <section class="footer-column">
+      <h3>Síguenos</h3>
+      <div class="footer-socials">
+        <a href="#" target="_blank" class="social-link" aria-label="Facebook">📘</a>
+        <a href="#" target="_blank" class="social-link" aria-label="Instagram">📸</a>
+        <a href="#" target="_blank" class="social-link" aria-label="Twitter">🐦</a>
+        <a href="#" target="_blank" class="social-link" aria-label="YouTube">▶️</a>
+      </div>
+    </section>
+  </div>
+</footer>
+
+
+
+<script src="src/scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+

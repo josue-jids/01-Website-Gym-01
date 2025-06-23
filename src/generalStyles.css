@@ -1,0 +1,546 @@
+
+
+/*    CSS RESET   */
+
+
+*,                /*	Selects all elements    */
+*::before,        /*Selects all ::before pseudo-elements*/
+*::after {        /*Selects all ::after pseudo-elements*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*the width and height you set will include the padding and border.*/
+}
+:root {
+  --primary-yellow: #f4b400; /* Primary yellow color #ffd900 */
+  --primary-black: #000000; /* Primary black color */
+}
+html {
+font-family: "Segoe UI", sans-serif;
+font-size: 62.5%; /*Resetear el tamaño de toda la web. 62.5 % aprox = 10px. */
+line-height: 1.5; /* Vertical space between lines. Improves readability. */
+-webkit-text-size-adjust: 100%; /* Prevents font scaling on iOS Safari */
+color:rgb(255, 255, 255);
+}
+body{
+    background-color: rgb(210, 209, 209);
+    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+}
+button {
+  all: unset;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+
+
+/* NAVBAR SECTION */
+
+.navbar{
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  position: sticky; /* Make the nav bar sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure the nav bar is above other content */
+  width: 100%;
+  height: 60px;
+  background-color: #000000;
+  padding: clamp(0.5rem, 4vw, 1rem) clamp(1.5rem, 4vw, 2rem); /* Vertically - Horizontally */
+}
+.logo{
+  color: var(--primary-yellow); 
+  font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive font size */
+  font-weight: bold; 
+}
+.navbar a {
+  text-decoration: none;
+  color: white; 
+  border-radius: 5px;
+}
+.navbar a:hover {
+color: var(--primary-yellow);
+}
+a.nav-btn{
+    background-color: var(--primary-yellow); 
+    color:#000000; 
+    border-radius: 5px; 
+    padding: 0px 5px; /* Vertically - Horizontally */
+    display: inline-flex;          /* para usar flexbox en línea */
+}
+a.nav-btn:hover{
+  background-color: black;
+  color: var(--primary-yellow);
+  border: 1px solid white;
+  font-style: bold;
+}
+.nav-menu{
+  list-style-type: none; /* Remove default list styles */
+  display: flex; 
+  gap: 1.5rem;
+  font-size: clamp(1.4rem, 4vw, 1.6rem); /* Responsive font size */ 
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* HERO SECTION */
+
+.section-hero {
+  background-image: url('../img/hero.avif'); 
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the background image */
+  min-height: calc(100vh - 60px); /* Set a fixed height for the hero section */
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center; 
+  padding: clamp(3rem, 4vw, 6rem) clamp(2rem, 4vw, 6rem);
+}
+.hero-content{
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white; 
+      padding: clamp(2rem, 4vw, 3rem); /* Vertically - Horizontally */
+      border-radius: 1.5rem	; 
+      text-align: center; 
+}
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem); 
+}
+.hero-content p {
+    font-size: clamp(1.5rem, 4vw, 1.8rem); 
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem); /* Vertically - Horizontally */
+}
+.btn-get-app{
+    border-radius: 5px;
+    padding: clamp(0rem, 4vw, 0.8rem) clamp(2rem, 4vw, 3.2rem); /* Vertically - Horizontally */
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    font-style: italic;
+    font-weight: bold; 
+    background-color: black;
+    color: var(--primary-yellow); 
+    box-shadow: 0px 0px 5px var(--primary-yellow); 
+}
+.btn-get-app:hover {
+    transform: scale(1.1);
+    transition: all 0.2s; /* Smooth transition for hover effects */
+    color: rgb(0, 0, 0); 
+    background-color: var(--primary-yellow);
+}
+
+/* SECTION PROGRAMS */
+
+.section-programs {
+  min-height: calc(100vh - 60px); /* height of the section without the navbar section */
+  background-color: #000000;
+  padding: clamp(3rem, 4vw, 6rem) clamp(1.5rem, 4vw, 6rem);/* Vertically - Horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 4rem);
+}
+.container-bucle-programs {
+  overflow: hidden; /* Hides content that overflows the box */
+  white-space: nowrap; /*  nowrap: forces everything into a single horizontal line. */
+}
+.bucle-programs {
+  display: inline-flex; /* Keeps children (like h2s) aligned horizontally */
+  animation: marquee 140s linear infinite; /* Continuous leftward movement */
+}
+.title-bucle-programs {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--primary-yellow);
+  font-style: italic;
+  font-weight: 700;
+  display: inline-block;
+  margin-left: 10px; /* Espacio entre los dos h2 */
+  letter-spacing: 1px;
+}
+/* This defines the animation: it moves the entire .bucle-programs element from position 0% to -50% horizontally.
+   This is typically used with two identical pieces of text inside .bucle-programs so the scroll loops seamlessly.
+*/
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+  
+}
+
+
+.container-programs{
+    display: flex; 
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    justify-content: center;
+}
+.program-card{
+    aspect-ratio: 3 / 5;
+    max-width: 30rem;
+    width: 90%;
+    padding-bottom: clamp(2rem, 4vw, 2rem); /* Vertically - Horizontally */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: rgba(0, 0, 0, 0.4); /* Negro con 40% de opacidad */
+    background-blend-mode: multiply; /* Mezcla la imagen de fondo con el color */
+}
+.program-card:hover {
+    transform: scale(1.02);
+    transition: all 0.4s; 
+    box-shadow: 0 0 8px #ffffff; 
+}
+.program-card h3 {
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 800; 
+  font-style: italic; 
+}
+a.program-btn{
+  color: white; 
+  font-style: italic;
+  font-weight: 700; 
+  font-size:  clamp(1.4rem , 4vw, 2rem);
+  padding: 5px 20px; /* Vertically - Horizontally */
+  border: 2px solid var(--primary-yellow); 
+  border-radius: 30px; 
+}
+
+a.program-btn:hover {
+    background-color: var(--primary-yellow); /* Background color for the button on hover */
+    color: black; /* Text color for the button on hover */
+}
+
+/* Background image for very card */
+.program-box{
+    background-image: url('../img/card-box.jpg');
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    color: #AA2FFA;
+
+  }
+.program-cross{
+    background-image: url('../img/card-cross.jpg');
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    color: #FA231E;
+}
+.program-training{
+    background-image: url('../img/card-training.jpg');
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    color: #FA2F6F;
+}
+.program-pilates{
+    background-image: url('../img/card-pilates.jpg');
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the background image */
+    color: #4702FA;
+}
+
+/* SECTION MEMBERSHIP */
+
+.section-memberships {
+  min-height: calc(100vh - 6rem);
+  background-color: var(--primary-black);
+  padding: clamp(3rem, 4vw, 6rem) clamp(1.5rem, 4vw, 6rem);/* Vertically - Horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(2.5rem, 4vw, 7rem);
+}
+.section-memberships h2 {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--primary-yellow);
+  font-style: italic;
+  border-radius: 3rem;
+  /*box-shadow: 0 0 30px -5px white; /* offset-x offset-y blur-radius spread-radius color inset */
+  text-align: center;
+}
+.container-plans{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(2rem, 4vw, 3rem); 
+}
+.plan-card {
+  max-width: 30rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  width: 90%;
+  border-radius: 1.2rem;
+  padding: clamp(2rem, 4vw, 2.5rem);
+  border: 2px solid var(--primary-yellow);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.plan-card h3{
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.plan-price{
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: bold;
+  margin: 1rem 0; /* Vertically - Horizontally */
+  color: var(--primary-yellow); /* Color for the price */
+}
+.plan-price span{
+   font-size: clamp(1.6rem, 4vw, 2.2rem);
+   color: var(--primary-yellow);
+}
+.plan-card ul{
+  list-style: none;
+  margin: clamp(1rem, 4vw, 2rem) 0; /* Vertically - Horizontally */
+}
+.plan-card ul li {
+  margin: clamp(0.5rem, 2vw, 1rem) 0; /* Vertically - Horizontally */
+  padding-left: 2rem;
+  position: relative;
+}
+.plan-card ul li::before {
+  content: "✔"; /* Checkmark symbol */
+  position: absolute; /*Needs a father with position relative (plan-card ul li)*/
+  left: 0px; /* Adjust as needed */
+  color: var(--primary-yellow); 
+}
+.plan-btn {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  padding: 1rem 0;  /* Vertically - Horizontally */
+  background-color: var(--primary-yellow);
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s ease; /* change soft*/
+}
+.plan-btn:hover {
+  background-color: #ffffff;
+  color: black; 
+}
+
+
+/* RECOMMENDED CARD PLAN */
+.plan-card.recommended{ 
+  background-color:  white;
+  color: rgb(0, 0, 0);
+  border: 3px solid var(--primary-yellow);
+}
+.plan-card.recommended p{
+  color: black !important;
+}
+.plan-card.recommended span{
+  color: black !important;
+}
+
+
+.plan-card.recommended .plan-btn {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 25px;
+  transition: 0.3s ease; /* change soft*/
+}
+.plan-card.recommended .plan-btn:hover {
+  background-color: var(--primary-yellow);
+  color: rgb(0, 0, 0); 
+}
+
+
+
+
+/* SECTION CONTACT */
+.section-contact {
+  min-height: calc(100vh - 60px);
+  background-color: #000; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(3rem, 4vw, 6rem) clamp(1.5rem, 4vw, 6rem);
+}
+
+.contact-title {
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--primary-yellow); 
+  font-style: italic;
+  margin-bottom: clamp(2rem, 4vw, 4rem); /* Vertically - Horizontally */
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 80rem;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.082);
+  padding: clamp(2rem, 4vw, 4rem); /* Vertically - Horizontally */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;  
+  gap: clamp(1rem, 4vw, 1.5rem); /* Space between form elements */
+}
+
+.contact-form label {
+  color: white;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-weight: bold;
+}
+
+.contact-form input, .contact-form select, .contact-form textarea {
+  padding: clamp(0.5rem, 4vw, 1rem) clamp(0.8rem, 4vw, 1.5rem); /* Vertically - Horizontally */ 
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  border: 2px solid #444;
+  border-radius: 5px;
+  background-color: #111;
+  color: white;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus, .contact-form select:focus,
+ .contact-form textarea:focus {
+  border-color: var(--primary-yellow);
+  outline: none; /* eliminar el contorno de un elemento. */
+}
+
+.form-row-group {
+  display: flex;
+  gap: clamp(1rem, 4vw, 2rem); /* Space between input groups */
+}
+.form-row-items{
+display: flex;
+flex-direction: column;
+width: 50%; /* Each input takes half the width */
+gap: 10px;
+}
+
+.btn-form-submit {
+  align-self: center;
+  padding: clamp(0.7rem, 4vw, 1.2rem) clamp(2rem, 4vw, 3rem); /* Vertically - Horizontally */
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-style: italic;
+  font-weight: bold;
+  margin-top: clamp(1rem, 4vw, 2rem); /* Vertically - Horizontally */
+  color: white;
+  background-color: transparent;
+  border: 2px solid var(--primary-yellow);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-form-submit:hover {
+  background-color: var(--primary-yellow);
+  color: #000;
+}
+
+
+/* FOOTER SECTION */
+.footer {
+  background-color: #111; /*#121212*/
+  color: white;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: clamp(1rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem); /* Vertically - Horizontally */
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.footer-column h3 {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  color: var(--primary-yellow);
+}
+.footer-column p {
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  color: #ccc;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+.social-link {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  transition: transform 0.3s, color 0.3s;
+}
+.social-link:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive */
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #2e2e2e;
+    flex-direction: column;
+    align-items: center;
+    display: none; /* hide by default */
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+    .nav-menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  .form-row-group {
+  display: flex;
+  flex-direction: column; 
+  gap: clamp(1rem, 4vw, 2rem); 
+}
+
+.form-row-items{
+display: flex;
+flex-direction: column;
+width: 100%; /* Each input takes half the width */
+gap: 10px;
+}
+.footer-container {
+  justify-content: column;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem); /* Vertically - Horizontally */
+}
+.footer-column {
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 992px) {
+  /* Adjust layout here */
+}
+
+/* Optional: Extra small devices */
+@media (max-width: 480px) {
+  /* Further refinement */
+}
